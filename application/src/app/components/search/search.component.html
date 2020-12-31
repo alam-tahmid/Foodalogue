@@ -1,0 +1,28 @@
+<br><br>
+<div class="row">
+  <div class="col-sm-12">
+    <form #rest="ngForm" (ngSubmit)="fetchRestaurants(rest.value)">
+      <div class="col-sm-2"></div>
+      <mat-form-field appearance="outline" class="col-sm-3">
+        <input #city matInput type="text" name="city" placeholder="City" ngModel>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-3">
+        <input #cuisine matInput type="text" name="cuisine" placeholder="Cuisine" ngModel>
+      </mat-form-field>
+      <div class="col-sm-2">
+        <button mat-raised-button color="primary" type="submit" class="searchForm">
+          <mat-icon>search</mat-icon>Search
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div *ngIf="list" class="row">
+    <h3 style="font-weight: bold;color: indigo;">{{searchcuisine | titlecase}} Restaurants in {{searchcity | titlecase}}
+      :</h3>
+    <app-display [restaurantData]="restaurants"></app-display>
+  </div>
+
+</div>

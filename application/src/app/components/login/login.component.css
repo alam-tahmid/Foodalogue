@@ -1,0 +1,18 @@
+.loginbutton {
+  width: 30%;
+  align-self: center !important;
+  margin-bottom: 10px !important;
+}
+
+.mat-card-header.mat-card-title {
+  text-decoration: underline !important;
+}
+
+.reglink {
+  text-align: center;
+}
+
+#regroute {
+  color: indigo !important;
+  text-decoration: none;
+}

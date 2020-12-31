@@ -1,0 +1,52 @@
+.contents {
+  margin-bottom: 10px;
+}
+
+.imgsz {
+  width: 100%;
+  height: 70%;
+}
+
+.cuisine {
+  font-size: 60%;
+  font-style: normal;
+  margin-bottom: -2px;
+  color: gray;
+}
+
+#resname {
+  font-weight: bold;
+  text-decoration: none;
+  color: indigo;
+}
+
+.row {
+  margin: auto;
+}
+
+.address {
+  font-size: 60%;
+  font-style: normal;
+  color: rgb(102, 101, 101);
+  font-weight: bold;
+}
+
+.keys {
+  font-size: 90%;
+  color: rgb(83, 83, 83);
+}
+
+.links {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.btncntnt {
+  color: rgb(68, 68, 68);
+  font-weight: bold;
+}
+
+.btncntnt a {
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+}

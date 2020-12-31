@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" [class.mat-elevation-z8]="true">
+  <button mat-button (click)="sidenav.toggle()" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+  Foodalogue
+
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button class="button-pad" [routerLink]="['/home']">
+      <mat-icon class="icon-pad">home</mat-icon> Home
+    </button>
+    <button mat-button [routerLink]="['/favorites']" *ngIf='loggedIn'>
+      <mat-icon class="icon-pad">star</mat-icon> Favourites
+    </button>
+
+  </div>
+  <span class="spacer"></span>
+  <button mat-button color="warm" [matMenuTriggerFor]="menu" *ngIf='accountDisp'>
+    <mat-icon>account_circle</mat-icon>Account
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <button mat-button color="warm" [matMenuTriggerFor]="menu" *ngIf='loggedIn'>
+    <mat-icon>account_circle</mat-icon> {{ user | titlecase}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/login']" *ngIf='accountDisp'>Login</button>
+    <button mat-menu-item [routerLink]="['/register']" *ngIf='accountDisp'>Sign Up</button>
+    <button mat-menu-item [routerLink]="['/home']" *ngIf='loggedIn' (click)="reset()">Log Out</button>
+  </mat-menu>
+
+</mat-toolbar>
+
+
+<mat-sidenav #sidenav mode="over" [(opened)]="opened">
+  <button mat-menu-item [routerLink]="['/home']" (click)="sidenav.toggle()"> Home</button>
+  <button mat-menu-item [routerLink]="['/favorites']" *ngIf='loggedIn' (click)="sidenav.toggle()">Favourites</button>
+</mat-sidenav>

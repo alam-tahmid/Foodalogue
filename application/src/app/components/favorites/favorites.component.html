@@ -1,0 +1,61 @@
+<br>
+<div class="row well col-sm-12">
+  <div *ngIf="favoritesData">
+    <div *ngFor="let res of favoritesData;index as i">
+      <mat-card class="mat-elevation-z4 contents">
+        <mat-card-header fxLayout="row">
+          <div class="col-sm-3">
+            <a href="{{res.restaurant_url}}">
+              <img class="img-responsive imgsz" src="{{res.restaurant_thumb}}" alt="No Image Available">
+            </a>
+          </div>
+          <div class="col-sm-9">
+            <mat-card-title>
+              <p class="cuisine">{{res.restaurant_cuisine}}</p>
+              <a href="{{res.restaurant_url}}" id="resname">{{res.restaurant_name}}</a>
+              <Address class="address">{{res.restaurant_address}}</Address>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-card-content>
+              <span class="keys col-sm-4">PRICE :</span>{{res.currency}}{{res.price}}
+              <br>
+              <span class="keys col-sm-4">RATING :</span>{{res.user_rating}}
+              <br>
+              <span class="keys col-sm-4">REVIEW :</span>{{res.rating_text}}
+            </mat-card-content>
+            <br>
+            <mat-divider></mat-divider>
+            <mat-card-footer class="col-sm-12">
+              <div class="links col-sm-4">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">menu_book</i>
+                  <span class="btncntnt"><a href="{{res.restaurant_menu_url}}">View Menu</a></span>
+                </button>
+              </div>
+
+              <div class="links col-sm-4">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">directions</i>
+                  <span class="btncntnt" (click)="goToMaps(res)">View in Maps</span>
+                </button>
+              </div>
+
+              <div class="links col-sm-4">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">delete</i>
+                  <span class="btncntnt" (click)="removeFav(res); favoritesData.splice(i,1);">Remove from
+                    Favorites</span>
+                </button>
+              </div>
+
+            </mat-card-footer>
+          </div>
+
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+
+
+</div>

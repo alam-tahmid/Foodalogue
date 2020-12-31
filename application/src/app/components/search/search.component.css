@@ -1,0 +1,14 @@
+.searchForm {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.mat-form-field-flex>.mat-form-field-infix {
+  padding: 0.4em 0em 1em 0em !important;
+}
+
+/* .mat-form-field-wrapper {
+    margin: 0em 0 !important;
+    background-color: white !important;
+    padding-bottom: 0px;
+} */

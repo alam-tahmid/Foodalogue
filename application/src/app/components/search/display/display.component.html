@@ -1,0 +1,66 @@
+<br>
+<div class="row well col-sm-12">
+  <div *ngIf="restaurantData">
+    <div *ngFor="let res of restaurantData;index as i">
+      <mat-card class="mat-elevation-z4 contents">
+        <mat-card-header fxLayout="row">
+          <div class="col-sm-3">
+            <a href="{{res.restaurant.url}}">
+              <img class="img-responsive imgsz" src="{{res.restaurant.featured_image}}" alt="No Image Available">
+            </a>
+          </div>
+          <div class="col-sm-12">
+            <mat-card-title>
+              <p class="cuisine">{{res.restaurant.cuisines}}</p>
+              <a href="{{res.restaurant.url}}" id="resname">{{res.restaurant.name}}</a>
+              <Address class="address">{{res.restaurant.location.address}}</Address>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-card-content>
+              <span class="keys col-sm-4">PRICE
+                :</span>{{res.restaurant.currency}}{{res.restaurant.average_cost_for_two}}
+              <br>
+              <span class="keys col-sm-4">RATING :</span>{{res.restaurant.user_rating.aggregate_rating}}
+              <br>
+              <span class="keys col-sm-4">REVIEW :</span>{{res.restaurant.user_rating.rating_text}}
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-footer>
+              <div class="links col-sm-4">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">menu_book</i>
+                  <span class="btncntnt"><a href="{{res.restaurant.menu_url}}"> View Menu</a></span>
+                </button>
+              </div>
+              <div class="links col-sm-4">
+                <button mat-button>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">directions</i>
+                  <span class="btncntnt" (click)="goToMaps(res)">View in Maps</span>
+                </button>
+              </div>
+
+              <div *ngIf="loggedIn">
+                <div class="links col-sm-4" *ngIf=" save[i]">
+                  <button mat-button (click)="saveRestaurant(res,i)">
+                    <i class="material-icons" style="color: rgb(68, 68, 68);">library_add</i>
+                    <span class="btncntnt"> Add to Favorites</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="links col-sm-4" *ngIf="!visible[i] || !save[i]">
+                <button mat-button disabled>
+                  <i class="material-icons" style="color: rgb(68, 68, 68);">done</i>
+                  <span class="btncntnt"> Added to Favorites</span>
+                </button>
+              </div>
+            </mat-card-footer>
+
+          </div>
+
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>

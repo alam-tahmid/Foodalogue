@@ -1,0 +1,64 @@
+.mat-card {
+
+  background-color: #333333;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  margin-top: 350px;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.foottext {
+  color: rgb(211, 211, 211);
+  font-size: 17px;
+  flex: 1 1 auto;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.col {
+  margin: 0 100px;
+  width: 25%;
+}
+
+.section-top {
+  display: flex;
+  justify-content: right;
+  padding: 0 0;
+}
+
+.navtext {
+  color: rgb(211, 211, 211);
+  font-size: 13px;
+  flex: 1 1 auto;
+  text-align: justify;
+  font-family: serif;
+}
+
+.name {
+  color: rgb(211, 211, 211);
+  font-size: 30px;
+  flex: 1 1 auto;
+  text-align: center;
+  font-family: serif
+}
+
+
+@media all and (max-width: 850px) {
+  .section-top {
+    flex-direction: column;
+  }
+
+  .col {
+    text-align: center;
+    width: 100%;
+    margin: 0
+  }
+
+  .navtext {
+    text-align: center;
+  }
+}

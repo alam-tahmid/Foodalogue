@@ -1,0 +1,22 @@
+.mat-toolbar {
+  background: indigo;
+  overflow: hidden;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.icon-pad {
+  padding-bottom: 3px;
+}
+
+.button-pad {
+  padding-right: 5px;
+}
